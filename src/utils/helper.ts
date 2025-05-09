@@ -4,8 +4,8 @@ export function createApiResponse<T>(
   error: string | null = null,
 ) {
   return {
-    success,
+    // success,
     data,
-    error,
+    // error,
   }
 }

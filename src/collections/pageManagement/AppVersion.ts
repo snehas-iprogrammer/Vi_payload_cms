@@ -2,6 +2,7 @@ import { Status } from '@/enums/common'
 import { enumToOptions } from '@/utils/enumToOptions'
 import { sqlID } from '@/utils/lib/sqlId'
 import { CollectionConfig } from 'payload'
+import React from 'react';
 
 const AppVersion: CollectionConfig = {
   slug: 'app_version',
@@ -11,8 +12,8 @@ const AppVersion: CollectionConfig = {
   },
   admin: {
     group: 'Page Management',
-    useAsTitle: 'appVersion',
-    defaultColumns: ['appVersion', 'isSilentOTAEnabled', 'status'],
+    useAsTitle: 'app_version',
+    defaultColumns: ['app_version', 'silent_ota', 'status'],
   },
   hooks: {
     beforeChange: [
@@ -33,7 +34,7 @@ const AppVersion: CollectionConfig = {
       },
     },
     {
-      name: 'appVersion',
+      name: 'app_version',
       label: 'App Version',
       type: 'text',
       required: true,
@@ -46,7 +47,7 @@ const AppVersion: CollectionConfig = {
       },
     },
     {
-      name: 'textMessage',
+      name: 'text_msg',
       label: 'Text Message',
       type: 'text',
       required: true,
@@ -59,7 +60,7 @@ const AppVersion: CollectionConfig = {
       },
     },
     {
-      name: 'redxOverlayDisplayDays',
+      name: 'redx_overlay_display_days',
       label: 'Redx Overlay Display Days',
       type: 'number',
       required: true,
@@ -72,7 +73,7 @@ const AppVersion: CollectionConfig = {
       },
     },
     {
-      name: 'webTnCTimestamp',
+      name: 'last_updated_wb_tnc_timestamp',
       label: 'Web TnC Timestamp',
       type: 'date',
       required: true,
@@ -82,10 +83,13 @@ const AppVersion: CollectionConfig = {
           display: 'inline-block',
           marginRight: '4%',
         },
+        date:{
+          pickerAppearance: 'dayAndTime'
+        }
       },
     },
     {
-      name: 'vigAutoExtendDate',
+      name: 'vig_auto_extend_date',
       label: 'VIG Auto Extend Date',
       type: 'date',
       required: true,
@@ -95,6 +99,9 @@ const AppVersion: CollectionConfig = {
           display: 'inline-block',
           marginRight: '4%',
         },
+        date:{
+          pickerAppearance: 'dayAndTime'
+        }
       },
     },
     {
@@ -124,7 +131,7 @@ const AppVersion: CollectionConfig = {
       required: true,
     },
     {
-      name: 'isSilentOTAEnabled',
+      name: 'silent_ota',
       label: 'Is Silent OTA Enabled',
       type: 'radio',
       admin: {
@@ -138,7 +145,7 @@ const AppVersion: CollectionConfig = {
       required: true,
     },
     {
-      name: 'isLiteRechargeBannerShown',
+      name: 'is_lite_recharge_banner_shown',
       label: 'Is Lite Recharge Banner Shown',
       type: 'radio',
       defaultValue: Status.Active,
@@ -152,7 +159,7 @@ const AppVersion: CollectionConfig = {
       },
     },
     {
-      name: 'isPaletroAPICall',
+      name: 'is_paletro_api_call',
       label: 'Is Paletro API Call',
       type: 'radio',
       defaultValue: Status.Active,
@@ -165,7 +172,7 @@ const AppVersion: CollectionConfig = {
       },
     },
     {
-      name: 'isPaletroPromotionalTitleShown',
+      name: 'is_paletro_promotional_title_shown',
       label: 'Is Paletro Promotional Title Shown',
       type: 'radio',
       defaultValue: Status.Active,
@@ -179,7 +186,7 @@ const AppVersion: CollectionConfig = {
       },
     },
     {
-      name: 'isViFinanceDown',
+      name: 'is_vi_finance_down',
       label: 'Is Vi Finance Down',
       type: 'radio',
       defaultValue: Status.Active,
@@ -207,7 +214,7 @@ const AppVersion: CollectionConfig = {
       },
     },
     {
-      name: 'isPrepaidViShopDisabled',
+      name: 'is_prepaid_vishop_disabled',
       label: 'Is Prepaid Vi Shop Disabled',
       type: 'radio',
       defaultValue: Status.Active,
@@ -221,7 +228,7 @@ const AppVersion: CollectionConfig = {
       },
     },
     {
-      name: 'isPostpaidViShopDisabled',
+      name: 'is_postpaid_vishop_disabled',
       label: 'Is Postpaid Vi Shop Disabled',
       type: 'radio',
       defaultValue: Status.Active,
@@ -235,7 +242,7 @@ const AppVersion: CollectionConfig = {
       },
     },
     {
-      name: 'isCOCPViShopDisabled',
+      name: 'is_cocp_vishop_disabled',
       label: 'Is COCP Vi Shop Disabled',
       type: 'radio',
       defaultValue: Status.Active,
@@ -249,7 +256,7 @@ const AppVersion: CollectionConfig = {
       },
     },
     {
-      name: 'isNonViViShopDisabled',
+      name: 'is_non_vi_vishop_disabled',
       label: 'Is Non-Vi Vi Shop Disabled',
       type: 'radio',
       defaultValue: Status.Active,
@@ -263,7 +270,7 @@ const AppVersion: CollectionConfig = {
       },
     },
     {
-      name: 'isShopDown',
+      name: 'is_shop_down',
       label: 'Is Shop Down',
       type: 'radio',
       defaultValue: Status.Active,
