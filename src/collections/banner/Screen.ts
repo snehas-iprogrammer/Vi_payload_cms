@@ -1,4 +1,5 @@
 import { Status } from '@/enums/common'
+import { Types } from '@/enums/types'
 import { enumToOptions } from '@/utils/enumToOptions'
 import { sqlID } from '@/utils/lib/sqlId'
 import { CollectionConfig } from 'payload'
@@ -67,6 +68,13 @@ const BannerScreens: CollectionConfig = {
       name: 'screen_subheader',
       type: 'text',
       label: 'Screen Sub-header',
+    },
+    {
+      name: 'type',
+      label:"Type",
+      type: 'select',
+      options: enumToOptions(Types),
+      required: true,
     },
     {
       name: 'is_timestamp_check',

@@ -5,6 +5,5 @@ export function enumToOptions<T extends Record<string, any>>(enumObj: T) {
       label: key,
       value: value, // Ensure value is a string to match Option type
     }))
-  // console.log(obj)
   return obj
 }
