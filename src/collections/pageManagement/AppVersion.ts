@@ -13,7 +13,7 @@ const AppVersion: CollectionConfig = {
   admin: {
     group: 'Page Management',
     useAsTitle: 'app_version',
-    defaultColumns: ['app_version', 'silent_ota', 'status'],
+    defaultColumns: ['app_version','silent_ota', 'isLiteRechargeBannerShown','isPaletroAPICall', 'status','isShopDown'],
   },
   hooks: {
     beforeChange: [
@@ -84,7 +84,8 @@ const AppVersion: CollectionConfig = {
           marginRight: '4%',
         },
         date:{
-          pickerAppearance: 'dayAndTime'
+          pickerAppearance: 'dayAndTime',
+          displayFormat: 'DD-MM-YYYY hh:mm:ss'
         }
       },
     },
@@ -100,8 +101,9 @@ const AppVersion: CollectionConfig = {
           marginRight: '4%',
         },
         date:{
-          pickerAppearance: 'dayAndTime'
-        }
+          pickerAppearance: 'dayAndTime',
+          displayFormat: 'DD-MM-YYYY hh:mm:ss',
+        },
       },
     },
     {
@@ -175,7 +177,7 @@ const AppVersion: CollectionConfig = {
       name: 'is_paletro_promotional_title_shown',
       label: 'Is Paletro Promotional Title Shown',
       type: 'radio',
-      defaultValue: Status.Active,
+      defaultValue: Status.Inactive,
       options: enumToOptions(Status),
       required: true,
       admin: {
@@ -189,7 +191,7 @@ const AppVersion: CollectionConfig = {
       name: 'is_vi_finance_down',
       label: 'Is Vi Finance Down',
       type: 'radio',
-      defaultValue: Status.Active,
+      defaultValue: Status.Inactive,
       options: enumToOptions(Status),
       required: true,
       admin: {
@@ -217,7 +219,7 @@ const AppVersion: CollectionConfig = {
       name: 'is_prepaid_vishop_disabled',
       label: 'Is Prepaid Vi Shop Disabled',
       type: 'radio',
-      defaultValue: Status.Active,
+      defaultValue: Status.Inactive,
       options: enumToOptions(Status),
       required: true,
       admin: {
@@ -231,7 +233,7 @@ const AppVersion: CollectionConfig = {
       name: 'is_postpaid_vishop_disabled',
       label: 'Is Postpaid Vi Shop Disabled',
       type: 'radio',
-      defaultValue: Status.Active,
+      defaultValue: Status.Inactive,
       options: enumToOptions(Status),
       required: true,
       admin: {
@@ -245,7 +247,7 @@ const AppVersion: CollectionConfig = {
       name: 'is_cocp_vishop_disabled',
       label: 'Is COCP Vi Shop Disabled',
       type: 'radio',
-      defaultValue: Status.Active,
+      defaultValue: Status.Inactive,
       options: enumToOptions(Status),
       required: true,
       admin: {
@@ -259,7 +261,7 @@ const AppVersion: CollectionConfig = {
       name: 'is_non_vi_vishop_disabled',
       label: 'Is Non-Vi Vi Shop Disabled',
       type: 'radio',
-      defaultValue: Status.Active,
+      defaultValue: Status.Inactive,
       options: enumToOptions(Status),
       required: true,
       admin: {
@@ -273,7 +275,7 @@ const AppVersion: CollectionConfig = {
       name: 'is_shop_down',
       label: 'Is Shop Down',
       type: 'radio',
-      defaultValue: Status.Active,
+      defaultValue: Status.Inactive,
       options: enumToOptions(Status),
       required: true,
       admin: {
