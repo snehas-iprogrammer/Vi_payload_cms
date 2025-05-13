@@ -1,4 +1,4 @@
 export enum SocId {
-  Include = 'include',
-  Exclude = 'exclude',
+  Include = '1',
+  Exclude = '2',
 }

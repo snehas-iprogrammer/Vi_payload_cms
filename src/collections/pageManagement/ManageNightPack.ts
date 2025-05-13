@@ -1,6 +1,6 @@
 import { Brands } from '@/enums/brands'
-import { DeviceOs } from '@/enums/deviceOs'
-import LoginTypes from '@/enums/loginTypes'
+import { DeviceOs } from '@/enums/deviceos'
+import LoginTypes from '@/enums/logintypes'
 import { Rank } from '@/enums/rank'
 import { States } from '@/enums/states'
 import { enumToOptions } from '@/utils/enumToOptions'
